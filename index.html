@@ -1,13 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="styles/reset.css">
-    <link rel="stylesheet" href="styles/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lumina</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  
+  <style>
+    @font-face {
+      font-family: 'Mersad';
+      src: url('Mersad-Regular.woff2') format('woff2'),
+           url('Mersad-Regular.woff') format('woff');
+      font-weight: normal;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'Mersad';
+      src: url('Mersad-Bold.woff2') format('woff2'),
+           url('Mersad-Bold.woff') format('woff');
+      font-weight: bold;
+      font-style: normal;
+    }
+  </style>
+
+  <link rel="stylesheet" href="styles/reset.css">
+  <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
-    
+
+  <div id="cookie-notification" class="cookie-notification">
+    <p>This website uses cookies to ensure you get the best experience. 
+      <button id="cookie-accept">Accept</button>
+    </p>
+  </div>
+
+  <header id="header">
+    <nav class="navbar">
+      <div class="logo">Lumina</div>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#courses">Courses</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      <div class="burger" id="burger">
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
+      </div>
+    </nav>
+  </header>
+
+
+  <section id="hero" class="section hero-section">
+    <div class="container">
+      <h1>Welcome to Lumina</h1>
+      <p>Your gateway to creative and technical courses.</p>
+      <a href="#courses" class="btn">Explore Courses</a>
+    </div>
+  </section>
+
+
+  <section id="courses" class="section courses-section">
+    <div class="container">
+      <h2>Our Courses</h2>
+      <div id="courses-container" class="courses-container">
+
+      </div>
+    </div>
+  </section>
+
+
+  <section id="about" class="section about-section">
+    <div class="container">
+      <h2>About Us</h2>
+      <p>We offer a wide range of courses designed to foster creativity and technical prowess. Our courses are crafted by industry professionals to ensure you receive the most current and in-depth knowledge available.</p>
+    </div>
+  </section>
+
+
+  <section id="contact" class="section contact-section">
+    <div class="container">
+      <h2>Contact Us</h2>
+      <form id="contact-form" novalidate>
+        <div class="form-group">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required placeholder="Your Name" />
+        </div>
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required placeholder="Your Email" />
+        </div>
+        <div class="form-group">
+          <label for="message">Message:</label>
+          <textarea id="message" name="message" required placeholder="Your Message"></textarea>
+        </div>
+        <button type="submit" class="btn">Submit</button>
+        <div id="form-error" class="form-error"></div>
+      </form>
+    </div>
+  </section>
+
+
+  <footer id="footer">
+    <div class="container">
+      <p>&copy; 2025 Lumina. All rights reserved.</p>
+    </div>
+  </footer>
+
+
+  <button id="scrollToTop" class="scroll-to-top">↑</button>
+
+
+  <script src="script.js"></script>
 </body>
 </html>

@@ -1,0 +1,239 @@
+body {
+    font-family: 'Mersad', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f5fafd;
+  }
+  
+  .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+  }
+
+  header {
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+  }
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+  }
+  .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #007acc;
+  }
+  .nav-links {
+    list-style: none;
+    display: flex;
+  }
+  .nav-links li {
+    margin-left: 1.5rem;
+  }
+  .nav-links a {
+    text-decoration: none;
+    color: #333;
+    transition: color 0.3s ease;
+  }
+  .nav-links a:hover {
+    color: #007acc;
+  }
+  
+  .burger {
+    display: none;
+    cursor: pointer;
+  }
+  .burger div {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    margin: 5px;
+    transition: all 0.3s ease;
+  }
+  
+  .section {
+    padding: 100px 0 60px;
+  }
+  
+  .hero-section {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://via.placeholder.com/1200x600') no-repeat center/cover;
+    color: #fff;
+    text-align: center;
+    padding-top: 150px;
+    padding-bottom: 150px;
+  }
+  .hero-section h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+  }
+  .hero-section p {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
+  }
+  .hero-section .btn {
+    margin-top: 20px;
+  }
+  
+  .section h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+  
+  .courses-section {
+    background-color: #fff;
+  }
+  .courses-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+  .course-card {
+    background-color: #f0faff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    flex: 1 1 calc(33.333% - 1.5rem);
+    transition: transform 0.3s ease;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  .course-card:hover {
+    transform: translateY(-5px);
+  }
+  .course-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  .course-card .course-content {
+    padding: 1rem;
+  }
+  .course-card h3 {
+    margin-bottom: 0.5rem;
+    color: #007acc;
+  }
+  
+  .about-section {
+    background-color: #f5fafd;
+    text-align: center;
+  }
+  
+
+  .contact-section {
+    background-color: #fff;
+  }
+  form {
+    max-width: 600px;
+    margin: auto;
+  }
+  .form-group {
+    margin-bottom: 1rem;
+  }
+  .form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  .form-error {
+    color: red;
+    margin-top: 0.5rem;
+  }
+  
+
+  footer {
+    background-color: #007acc;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+  }
+  
+
+  .scroll-to-top {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    background-color: #007acc;
+    color: #fff;
+    border: none;
+    padding: 0.75rem 1rem;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none;
+    font-size: 1.2rem;
+    z-index: 1000;
+  }
+  
+
+  .cookie-notification {
+    position: fixed;
+    bottom: 0;
+    background-color: #007acc;
+    color: #fff;
+    width: 100%;
+    padding: 1rem;
+    text-align: center;
+    z-index: 1000;
+  }
+  .cookie-notification button {
+    background-color: #fff;
+    color: #007acc;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+
+  @media (max-width: 768px) {
+    .nav-links {
+      position: absolute;
+      right: 0;
+      height: 100vh;
+      top: 60px;
+      background-color: #fff;
+      flex-direction: column;
+      width: 200px;
+      align-items: center;
+      transform: translateX(100%);
+      transition: transform 0.3s ease-in;
+      box-shadow: -2px 0 5px rgba(0,0,0,0.1);
+    }
+    .nav-links li {
+      margin: 1.5rem 0;
+    }
+    .burger {
+      display: block;
+    }
+    .nav-active {
+      transform: translateX(0);
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .hero-section h1 {
+      font-size: 2rem;
+    }
+    .courses-container {
+      flex-direction: column;
+    }
+    .course-card {
+      flex: 1 1 100%;
+    }
+  }
+  
