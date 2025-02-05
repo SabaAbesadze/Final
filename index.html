@@ -3,22 +3,24 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Lumina</title>
+  <title>BrighterMind</title>
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-  
+
   <style>
     @font-face {
       font-family: 'Mersad';
-      src: url('Mersad-Regular.woff2') format('woff2'),
-           url('Mersad-Regular.woff') format('woff');
+      src: url('fonts/Mersad-Regular.woff2') format('woff2'),
+           url('fonts/Mersad-Regular.woff') format('woff');
       font-weight: normal;
       font-style: normal;
     }
     @font-face {
       font-family: 'Mersad';
-      src: url('Mersad-Bold.woff2') format('woff2'),
-           url('Mersad-Bold.woff') format('woff');
+      src: url('fonts/Mersad-Bold.woff2') format('woff2'),
+           url('fonts/Mersad-Bold.woff') format('woff');
       font-weight: bold;
       font-style: normal;
     }
@@ -29,22 +31,26 @@
 </head>
 <body>
 
+  <!-- Cookie შეტყობინება -->
   <div id="cookie-notification" class="cookie-notification">
     <p>This website uses cookies to ensure you get the best experience. 
       <button id="cookie-accept">Accept</button>
     </p>
   </div>
 
+  <!-- ნავიგაციის მენიუ -->
   <header id="header">
     <nav class="navbar">
-      <div class="logo">Lumina</div>
+      <div class="logo">BrighterMind</div>
       <ul class="nav-links" id="nav-links">
         <li><a href="#hero">Home</a></li>
         <li><a href="#courses">Courses</a></li>
-        <li><a href="#about">About</a></li>
+        <li><a href="#trends">Trends</a></li>
+        <li><a href="#about">About Us</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
 
+      <!-- ბურგერ მენიუ -->
       <div class="burger" id="burger">
         <div class="line1"></div>
         <div class="line2"></div>
@@ -53,34 +59,74 @@
     </nav>
   </header>
 
-
+  <!-- Hero სექცია -->
   <section id="hero" class="section hero-section">
-    <div class="container">
-      <h1>Welcome to Lumina</h1>
-      <p>Your gateway to creative and technical courses.</p>
-      <a href="#courses" class="btn">Explore Courses</a>
+    <div id="hero-slider" class="splide">
+      <div class="splide__track">
+        <ul class="splide__list">
+          <img class="splide__slide" src='images/hero-1.jpg' alt="Image 1">
+          <img class="splide__slide" src='images/hero-2.jpg' alt="Image 2">
+          <img class="splide__slide" src='images/hero-3.jpg' alt="Image 3">
+        </ul>
+      </div>
     </div>
-  </section>
-
-
-  <section id="courses" class="section courses-section">
-    <div class="container">
-      <h2>Our Courses</h2>
-      <div id="courses-container" class="courses-container">
-
+    <div class="hero-overlay">
+      <div class="hero-content">
+        <h1>Welcome to BrighterMind</h1>
+        <p>Your gateway to creative and technical courses.</p>
+        <a href="#courses" class="btn explore-btn">Explore Courses</a>
       </div>
     </div>
   </section>
 
-
-  <section id="about" class="section about-section">
+  <!-- კურსები -->
+  <section id="courses" class="section courses-section">
     <div class="container">
-      <h2>About Us</h2>
-      <p>We offer a wide range of courses designed to foster creativity and technical prowess. Our courses are crafted by industry professionals to ensure you receive the most current and in-depth knowledge available.</p>
+      <h2>Our Courses</h2>
+      <div id="courses-container" class="courses-container">
+      </div>
     </div>
   </section>
 
+  <!-- ახალი ტრენდები -->
+  <section id="trends" class="section trends-section">
+    <div class="container">
+      <h2>New Trends</h2>
+      <div id="trends-slider" class="splide">
+        <div class="splide__track">
+          <ul class="splide__list">
+            <li class="splide__slide">Embracing minimalism in design is key for clearer user experiences.</li>
+            <li class="splide__slide">Leveraging AI-driven tools can empower creative content generation.</li>
+            <li class="splide__slide">Sustainable tech innovations pave the way for a greener future.</li>
+            <li class="splide__slide">Seamless cross-platform development fosters better user engagement.</li>
+            <li class="splide__slide">Harnessing advanced data analytics transforms decision-making.</li>
+            <li class="splide__slide">Immersive AR and VR experiences revolutionize interactive learning.</li>
+            <li class="splide__slide">Remote work synergy enhances virtual collaboration and productivity.</li>
+            <li class="splide__slide">Eco-friendly innovations drive sustainable digital transformations.</li>
+            <li class="splide__slide">The evolution of 5G accelerates connectivity and digital progress.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
 
+  <!-- ჩვენს შესახებ -->
+  <section id="about" class="section about-section">
+    <div class="container">
+      <h2>About Us</h2>
+      <p>
+        At BrighterMind, we believe education is the spark that ignites innovation. Our carefully crafted courses blend cutting-edge techniques with real-world insights.
+      </p>
+      <p>
+        We invite you into a supportive learning environment where every lesson empowers you with the knowledge and skills needed to excel.
+      </p>
+      <p>
+        Whether you're looking to advance your career or explore new passions, our courses are designed to inspire and transform.
+      </p>
+    </div>
+  </section>
+
+  <!-- საკონტაქტო ფორმა -->
   <section id="contact" class="section contact-section">
     <div class="container">
       <h2>Contact Us</h2>
@@ -94,26 +140,33 @@
           <input type="email" id="email" name="email" required placeholder="Your Email" />
         </div>
         <div class="form-group">
+          <label for="password">Password:</label>
+          <div class="password-container">
+            <input type="password" id="password" name="password" required placeholder="Your Password" />
+            <button type="button" id="toggle-password">Show</button>
+          </div>
+        </div>
+        <div class="form-group">
           <label for="message">Message:</label>
           <textarea id="message" name="message" required placeholder="Your Message"></textarea>
         </div>
-        <button type="submit" class="btn">Submit</button>
+        <button type="submit" class="btn submit-btn">Submit</button>
         <div id="form-error" class="form-error"></div>
       </form>
     </div>
   </section>
 
-
+  <!-- ფუთერი -->
   <footer id="footer">
     <div class="container">
-      <p>&copy; 2025 Lumina. All rights reserved.</p>
+      <p>&copy; 2025 BrighterMind. All rights reserved.</p>
     </div>
   </footer>
 
-
+  <!-- Scroll to Top ღილაკი -->
   <button id="scrollToTop" class="scroll-to-top">↑</button>
 
-
+  <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>

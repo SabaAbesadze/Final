@@ -1,239 +1,407 @@
+html {
+  scroll-padding-top: 80px;
+}
+html, body {
+  min-width: 320px;
+}
 body {
-    font-family: 'Mersad', sans-serif;
-    line-height: 1.6;
-    color: #333;
-    background-color: #f5fafd;
-  }
-  
-  .container {
-    width: 90%;
-    max-width: 1200px;
-    margin: auto;
-  }
-
-  header {
-    background-color: #ffffff;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    position: fixed;
-    width: 100%;
-    z-index: 1000;
-  }
-  .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem;
-  }
-  .logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #007acc;
-  }
-  .nav-links {
-    list-style: none;
-    display: flex;
-  }
-  .nav-links li {
-    margin-left: 1.5rem;
-  }
-  .nav-links a {
-    text-decoration: none;
-    color: #333;
-    transition: color 0.3s ease;
-  }
-  .nav-links a:hover {
-    color: #007acc;
-  }
-  
-  .burger {
-    display: none;
-    cursor: pointer;
-  }
-  .burger div {
-    width: 25px;
-    height: 3px;
-    background-color: #333;
-    margin: 5px;
-    transition: all 0.3s ease;
-  }
-  
-  .section {
-    padding: 100px 0 60px;
-  }
-  
-  .hero-section {
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://via.placeholder.com/1200x600') no-repeat center/cover;
-    color: #fff;
-    text-align: center;
-    padding-top: 150px;
-    padding-bottom: 150px;
-  }
-  .hero-section h1 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
-  }
-  .hero-section p {
-    font-size: 1.25rem;
-    margin-bottom: 2rem;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
-  }
-  .hero-section .btn {
-    margin-top: 20px;
-  }
-  
-  .section h2 {
-    font-size: 2.5rem;
-    font-weight: bold;
-    margin-bottom: 1rem;
-  }
-  
-  .courses-section {
-    background-color: #fff;
+  font-family: 'Mersad', sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f5fafd;
+  margin: 0;
+  box-sizing: border-box;
+}
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
+/* ნავიგაციის მენიუ */
+header {
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+}
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #007acc;
+}
+.nav-links {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+.nav-links li {
+  margin-left: 24px;
+}
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+  transition: color 0.3s ease;
+}
+.nav-links a:hover {
+  color: #007acc;
+}
+/* ბურგერ მენიუ */
+.burger {
+  display: none;
+  cursor: pointer;
+}
+.burger div {
+  width: 25px;
+  height: 3px;
+  background-color: #333;
+  margin: 5px;
+  transition: all 0.3s ease;
+}
+.section {
+  padding: 100px 0 60px;
+}
+/* Hero სექცია */
+.hero-section {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+#hero-slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+#hero-slider .splide__slide {
+  width: 100%;
+  height: 100%;
+}
+.hero-overlay {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 16px;
+}
+.hero-content {
+  max-width: 800px;
+  color: #fff;
+}
+.hero-content h1 {
+  font-size: 48px;
+  margin-bottom: 16px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+.hero-content p {
+  font-size: 20px;
+  margin-bottom: 32px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+}
+.explore-btn {
+  background-color: #007acc;
+  color: #fff;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+.explore-btn:hover {
+  background-color: #005fa3;
+}
+.section h2 {
+  font-size: 40px;
+  font-weight: bold;
+  margin-bottom: 16px;
+  text-align: left;
+}
+/* კურსები */
+.courses-section {
+  background-color: #fff;
+}
+.courses-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  margin-top: 32px;
+}
+.course-card {
+  background-color: #f0faff;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  flex: 1 1 280px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.course-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.course-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+  max-width: 100%;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+.course-card:hover img {
+  transform: scale(1.05);
+  filter: brightness(0.9);
+}
+.course-card .course-content {
+  padding: 16px;
+}
+.course-card h3 {
+  margin-bottom: 8px;
+  color: #007acc;
+}
+/* ახალი ტრენდები */
+.trends-section {
+  background-color: #f5fafd;
+  padding: 60px 0;
+}
+#trends-slider .splide__slide {
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 16px;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 120px;
+  overflow: visible;
+  box-sizing: border-box;
+}
+#trends-slider .splide__arrows {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+#trends-slider .splide__arrow {
+  pointer-events: all;
+  background: #007acc;
+  color: #fff;
+  border: none;
+  padding: 8px;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+#trends-slider .splide__arrow--prev {
+  left: -50px;
+}
+#trends-slider .splide__arrow--next {
+  right: -50px;
+}
+#trends-slider .splide__pagination {
+  position: absolute;
+  bottom: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+/* ჩვენს შესახებ */
+.about-section {
+  background-color: #f5fafd;
+  text-align: left;
+  padding: 40px 0;
+}
+.about-section .container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 16px;
+}
+.about-section h2 {
+  font-size: 40px;
+  font-weight: bold;
+  margin-bottom: 16px;
+  text-align: left;
+}
+.about-section p {
+  font-size: 20px;
+  line-height: 1.6;
+  margin: 16px 0;
+}
+/* საკონტაქტო ფორმა */
+.contact-section {
+  background-color: #fff;
+}
+form {
+  max-width: 600px;
+  margin: auto;
+}
+.form-group {
+  margin-bottom: 16px;
+}
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+}
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+.password-container {
+  display: flex;
+  align-items: center;
+}
+.password-container input {
+  flex: 1;
+}
+.password-container button {
+  margin-left: 8px;
+  padding: 8px 12px;
+  border: none;
+  background-color: #007acc;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.password-container button:hover {
+  background-color: #005fa3;
+}
+.submit-btn {
+  background-color: #007acc;
+  color: #fff;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.submit-btn:hover {
+  background-color: #005fa3;
+}
+.form-error {
+  color: red;
+  margin-top: 8px;
+}
+/* ფუთერი */
+footer {
+  background-color: #007acc;
+  color: #fff;
+  text-align: center;
+  padding: 16px 0;
+}
+/* Scroll to Top ღილაკი */
+.scroll-to-top {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  background-color: #007acc;
+  color: #fff;
+  border: none;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  border-radius: 50%;
+  cursor: pointer;
+  display: none;
+  font-size: 18px;
+  z-index: 1000;
+}
+/* Cookie შეტყობინება */
+.cookie-notification {
+  position: fixed;
+  bottom: 0;
+  background-color: #007acc;
+  color: #fff;
+  width: 100%;
+  padding: 16px;
+  text-align: center;
+  z-index: 1000;
+}
+.cookie-notification button {
+  background-color: #fff;
+  color: #007acc;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+/* რესპონსივი */
+@media (max-width: 1024px) {
+  .course-card {
+    flex: 1 1 300px;
   }
   .courses-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-    margin-top: 2rem;
+    flex-direction: row;
   }
+}
+@media (max-width: 768px) {
   .course-card {
-    background-color: #f0faff;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    flex: 1 1 calc(33.333% - 1.5rem);
-    transition: transform 0.3s ease;
-    overflow: hidden;
-    display: flex;
+    flex: 1 1 340px;
+  }
+  .nav-links {
+    position: absolute;
+    right: 0;
+    height: 100vh;
+    top: 60px;
+    background-color: #fff;
     flex-direction: column;
+    width: 200px;
+    align-items: center;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
   }
-  .course-card:hover {
-    transform: translateY(-5px);
+  .nav-links li {
+    margin: 24px 0;
   }
-  .course-card img {
-    width: 100%;
-    height: auto;
+  .burger {
     display: block;
   }
-  .course-card .course-content {
-    padding: 1rem;
+  .nav-active {
+    transform: translateX(0);
   }
-  .course-card h3 {
-    margin-bottom: 0.5rem;
-    color: #007acc;
+}
+@media (max-width: 480px) {
+  .course-card {
+    flex: 1 1 100%;
   }
-  
-  .about-section {
-    background-color: #f5fafd;
-    text-align: center;
+  .hero-section h1 {
+    font-size: 32px;
   }
-  
-
-  .contact-section {
-    background-color: #fff;
+  .hero-section p {
+    font-size: 16px;
   }
-  form {
-    max-width: 600px;
-    margin: auto;
+}
+@media (max-width: 320px) {
+  .course-card {
+    flex: 1 1 100%;
   }
-  .form-group {
-    margin-bottom: 1rem;
+  .nav-links li {
+    margin-left: 16px;
   }
-  .form-group label {
-    display: block;
-    margin-bottom: 0.5rem;
-  }
-  .form-group input,
-  .form-group textarea {
-    width: 100%;
-    padding: 0.75rem;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  .form-error {
-    color: red;
-    margin-top: 0.5rem;
-  }
-  
-
-  footer {
-    background-color: #007acc;
-    color: #fff;
-    text-align: center;
-    padding: 1rem 0;
-  }
-  
-
-  .scroll-to-top {
-    position: fixed;
-    bottom: 40px;
-    right: 40px;
-    background-color: #007acc;
-    color: #fff;
-    border: none;
-    padding: 0.75rem 1rem;
-    border-radius: 50%;
-    cursor: pointer;
-    display: none;
-    font-size: 1.2rem;
-    z-index: 1000;
-  }
-  
-
-  .cookie-notification {
-    position: fixed;
-    bottom: 0;
-    background-color: #007acc;
-    color: #fff;
-    width: 100%;
-    padding: 1rem;
-    text-align: center;
-    z-index: 1000;
-  }
-  .cookie-notification button {
-    background-color: #fff;
-    color: #007acc;
-    border: none;
-    padding: 0.5rem 1rem;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-
-  @media (max-width: 768px) {
-    .nav-links {
-      position: absolute;
-      right: 0;
-      height: 100vh;
-      top: 60px;
-      background-color: #fff;
-      flex-direction: column;
-      width: 200px;
-      align-items: center;
-      transform: translateX(100%);
-      transition: transform 0.3s ease-in;
-      box-shadow: -2px 0 5px rgba(0,0,0,0.1);
-    }
-    .nav-links li {
-      margin: 1.5rem 0;
-    }
-    .burger {
-      display: block;
-    }
-    .nav-active {
-      transform: translateX(0);
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .hero-section h1 {
-      font-size: 2rem;
-    }
-    .courses-container {
-      flex-direction: column;
-    }
-    .course-card {
-      flex: 1 1 100%;
-    }
-  }
-  
+}
