@@ -176,13 +176,12 @@ header {
 }
 /* ახალი ტრენდები */
 .trends-section {
-  background-color: #f5fafd;
+  background-color: #d7e9f4;
   padding: 60px 0;
 }
 #trends-slider .splide__slide {
   background-color: #fff;
   border-radius: 5px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   padding: 16px;
   font-size: 16px;
   display: flex;
@@ -202,10 +201,11 @@ header {
 }
 #trends-slider .splide__arrow {
   pointer-events: all;
-  background: #007acc;
-  color: #fff;
+  background: #fff;
+  color: #333;
   border: none;
-  padding: 8px;
+  padding: 12px;
+  font-size: 18px;
   border-radius: 50%;
   position: absolute;
   top: 50%;
@@ -213,21 +213,21 @@ header {
   z-index: 10;
 }
 #trends-slider .splide__arrow--prev {
-  left: -50px;
+  left: -60px;
 }
 #trends-slider .splide__arrow--next {
-  right: -50px;
+  right: -60px;
 }
 #trends-slider .splide__pagination {
   position: absolute;
-  bottom: -50px;
+  bottom: -40px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 10;
 }
 /* ჩვენს შესახებ */
 .about-section {
-  background-color: #f5fafd;
+  background-color: #fff;
   text-align: left;
   padding: 40px 0;
 }
@@ -250,7 +250,7 @@ header {
 }
 /* საკონტაქტო ფორმა */
 .contact-section {
-  background-color: #fff;
+  background-color: #d7e9f4;
 }
 form {
   max-width: 600px;
@@ -286,6 +286,8 @@ form {
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  font-family: 'Mersad', sans-serif;
+  font-size: 16px;
 }
 .password-container button:hover {
   background-color: #005fa3;
@@ -298,6 +300,8 @@ form {
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  font-family: 'Mersad', sans-serif;
+  font-size: 16px;
 }
 .submit-btn:hover {
   background-color: #005fa3;
