@@ -70,13 +70,14 @@ document.addEventListener('DOMContentLoaded', () => {
     cookieNotification.style.display = 'none';
   });
 
-  // საკონტაქტო ფორმის ვალიდაცია
+  // საკონტაქტო ფორმა
   const contactForm = document.getElementById('contact-form');
   const formError = document.getElementById('form-error');
 
-  // show/hide პაროლი
   const togglePasswordBtn = document.getElementById('toggle-password');
   const passwordInput = document.getElementById('password');
+
+  // show/hide ღილაკი
   togglePasswordBtn.addEventListener('click', () => {
     if (passwordInput.type === 'password') {
       passwordInput.type = 'text';
@@ -98,15 +99,56 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Regex
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const passwordRegex = /^(?=.*[A-Z]).{8,}$/;
 
-    if (!nameValue || !emailValue || !passwordValue || !messageValue) {
+    // ცარიელი ფორმა
+    if (!nameValue && !emailValue && !passwordValue && !messageValue) {
       formError.textContent = 'Please fill out all fields.';
       return;
     }
-    if (!emailRegex.test(emailValue)) {
+
+    // ვალიდაცია
+    if (!nameValue) {
+      formError.textContent = 'Name is required.';
+      return;
+    } else if (nameValue.length < 6) {
+      formError.textContent = 'Name must be at least 6 characters long.';
+      return;
+    }
+
+    if (!emailValue) {
+      formError.textContent = 'Email is required.';
+      return;
+    } else if (!emailRegex.test(emailValue)) {
       formError.textContent = 'Please enter a valid email address.';
       return;
     }
+
+    if (!passwordValue) {
+      formError.textContent = 'Password is required.';
+      return;
+    } else if (!passwordRegex.test(passwordValue)) {
+      formError.textContent = 'Password must be at least 8 characters long and contain at least one uppercase letter.';
+      return;
+    }
+
+    if (!messageValue) {
+      formError.textContent = 'Message is required.';
+      return;
+    } else if (messageValue.length < 4) {
+      formError.textContent = 'Message must be at least 4 characters long.';
+      return;
+    }
+
+    // ინფორმაციის localStorage-ში შენახვა
+    const formData = {
+      name: nameValue,
+      email: emailValue,
+      password: passwordValue,
+      message: messageValue,
+    };
+    localStorage.setItem('contactFormData', JSON.stringify(formData));
+
     alert('Form submitted successfully!');
     contactForm.reset();
     togglePasswordBtn.textContent = 'Show';

@@ -6,7 +6,6 @@
   <title>BrighterMind</title>
   
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
-
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
   <style>
@@ -61,23 +60,29 @@
 
   <!-- Hero სექცია -->
   <section id="hero" class="section hero-section">
-    <div id="hero-slider" class="splide">
-      <div class="splide__track">
-        <ul class="splide__list">
-          <img class="splide__slide" src='images/hero-1.jpg' alt="Image 1">
-          <img class="splide__slide" src='images/hero-2.jpg' alt="Image 2">
-          <img class="splide__slide" src='images/hero-3.jpg' alt="Image 3">
-        </ul>
-      </div>
+  <div id="hero-slider" class="splide">
+    <div class="splide__track">
+      <ul class="splide__list">
+        <li class="splide__slide">
+          <img src="images/hero-1.jpg" alt="Image 1">
+        </li>
+        <li class="splide__slide">
+          <img src="images/hero-2.jpg" alt="Image 2">
+        </li>
+        <li class="splide__slide">
+          <img src="images/hero-3.jpg" alt="Image 3">
+        </li>
+      </ul>
     </div>
-    <div class="hero-overlay">
-      <div class="hero-content">
-        <h1>Welcome to BrighterMind</h1>
-        <p>Your gateway to creative and technical courses.</p>
-        <a href="#courses" class="btn explore-btn">Explore Courses</a>
-      </div>
+  </div>
+  <div class="hero-overlay">
+    <div class="hero-content">
+      <h1>Welcome to BrighterMind</h1>
+      <p>Your gateway to creative and technical courses.</p>
+      <a href="#courses" class="btn explore-btn">Explore Courses</a>
     </div>
-  </section>
+  </div>
+</section>
 
   <!-- კურსები -->
   <section id="courses" class="section courses-section">
